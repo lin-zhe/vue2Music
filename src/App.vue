@@ -1,32 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <layout-header />
+    <layout-aside />
+    <layout-article />
+    <layout-footer />
   </div>
 </template>
+<script>
+import LayoutHeader from "@/layout/Header";
+import LayoutAside from "@/layout/Aside";
+import LayoutArticle from "@/layout/Article";
+import LayoutFooter from "@/layout/Footer";
+export default {
+  name: "App",
+  components: {
+    LayoutHeader,
+    LayoutAside,
+    LayoutArticle,
+    LayoutFooter,
+  },
+};
+</script>
 
 <style lang="less">
+@import url("./styles/index.css");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 </style>
